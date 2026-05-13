@@ -1,0 +1,12 @@
+[package]
+name = "pandoc-caption"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "pandoc-caption"
+path = "src/main.rs"
+
+[dependencies]
+pandoc_ast = "0.8.6"
+serde_json = "1.0.149"
