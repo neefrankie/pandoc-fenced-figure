@@ -37,3 +37,11 @@ With figure:
 Caption: Marks a paragraph used as figcaption.
 :::
 
+This is inline math: $f(x) = x^2$
+
+And display math:
+
+$$
+|V| = kN^{\beta}
+\tag{2.5}
+$$
