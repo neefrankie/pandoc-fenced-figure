@@ -1,5 +1,13 @@
-use pandoc_ast::{Block, Pandoc};
-use serde_json;
+use pandoc_ast::{Block, MutVisitor};
+use std::io::{self, Read, Write};
+
+struct DivVisitor;
+
+impl MutVisitor for DivVisitor {
+    fn visit_block(&mut self, block: &mut Block) {
+        *block = convert_div_to_figure(block.clone());
+    }
+}
 
 fn convert_div_to_figure(block: Block) -> Block {
     match block {
@@ -34,12 +42,14 @@ fn convert_div_to_figure(block: Block) -> Block {
     }
 }
 
-fn main() {
-    let mut pandoc: Pandoc = serde_json::from_reader(std::io::stdin()).unwrap();
-
-    pandoc.blocks.iter_mut().for_each(|block| {
-        *block = convert_div_to_figure(block.clone());
+fn main()  -> Result<(), Box<dyn std::error::Error>> {
+    let mut s = String::new();
+    io::stdin().read_to_string(&mut s)?;
+    let s = pandoc_ast::filter(s, |mut pandoc| {
+        DivVisitor.walk_pandoc(&mut pandoc);
+        pandoc
     });
+    io::stdout().write(s.as_bytes())?;
 
-    serde_json::to_writer(std::io::stdout(), &pandoc).unwrap();
+    Ok(())
 }
