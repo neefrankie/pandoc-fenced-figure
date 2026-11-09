@@ -26,7 +26,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pandoc_caption"
+name = "pandoc_fenced_figure"
 version = "0.1.0"
 dependencies = [
  "pandoc_ast",

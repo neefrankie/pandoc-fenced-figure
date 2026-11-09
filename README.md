@@ -1,15 +1,15 @@
-# pandoc-caption
+# pandoc-fenced-figure
 
-pandoc-caption is a [pandoc](https://pandoc.org/) filter that adds a caption to any block by making use of the Pandoc markdown's Div syntax:
+pandoc-fenced-figure is a [pandoc](https://pandoc.org/) filter that turns Pandoc Div element with `figure` class into `Figure` element:
 
 ```markdown
-:::{.figure}
+::: figure
 
 ```python
 print("Hello World!")
 ```
 
-Caption: Marks a paragraph used as figcaption.
+The last paragraph in the div is turuned to caption.
 :::
 ```
 
@@ -25,7 +25,7 @@ will be rendered to the following HTML:
 </figure>
 ```
 
-it should also render properly into `figure` in typst.
+It should also render properly into `figure` in typst.
 
 ## Install
 
@@ -36,5 +36,5 @@ cargo install --path . --locked --release
 ## Usage
 
 ```bash
-pandoc -f markdown -t html --filter pandoc-caption -o myfile.html markdown.md
+pandoc -f markdown-auto_identifiers -t typst --filter pandoc-fenced-figure -o out.typ markdown.md
 ```

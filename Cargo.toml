@@ -1,10 +1,10 @@
 [package]
-name = "pandoc_caption"
+name = "pandoc_fenced_figure"
 version = "0.1.0"
 edition = "2024"
 
 [[bin]]
-name = "pandoc-caption"
+name = "pandoc-fenced-figure"
 path = "src/main.rs"
 
 [dependencies]
