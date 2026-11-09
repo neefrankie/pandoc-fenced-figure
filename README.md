@@ -2,16 +2,16 @@
 
 pandoc-fenced-figure is a [pandoc](https://pandoc.org/) filter that turns Pandoc Div element with `figure` class into `Figure` element:
 
-```markdown
+~~~markdown
 ::: figure
 
-````python
+```python
 print("Hello World!")
-````
+```
 
 The last paragraph in the div is turuned to caption.
 :::
-```
+~~~
 
 will be rendered to the following HTML:
 
