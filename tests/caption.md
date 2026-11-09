@@ -18,30 +18,11 @@ Table:  Demonstration of simple table syntax.
 
 Code caption:
 
-:::{.figure}
+::: figure
 
 ```python
 print("Hello World!")
 ```
 
-Caption: Marks a paragraph used as figcaption.
+Last paragraph is turned into caption.
 :::
-
-
-With figure:
-
-:::{.figure #my-figure caption="this is caption"}
-
-![](/images/slp3/slp-fig-6-7.png)
-
-Caption: Marks a paragraph used as figcaption.
-:::
-
-This is inline math: $f(x) = x^2$
-
-And display math:
-
-$$
-|V| = kN^{\beta}
-\tag{2.5}
-$$
