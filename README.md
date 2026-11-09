@@ -30,7 +30,7 @@ It should also render properly into `figure` in typst.
 ## Install
 
 ```bash
-cargo install --path . --locked --release
+cargo install --path . --locked
 ```
 
 ## Usage
