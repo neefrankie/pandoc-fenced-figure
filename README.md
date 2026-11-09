@@ -5,9 +5,9 @@ pandoc-fenced-figure is a [pandoc](https://pandoc.org/) filter that turns Pandoc
 ```markdown
 ::: figure
 
-```python
+````python
 print("Hello World!")
-```
+````
 
 The last paragraph in the div is turuned to caption.
 :::
