@@ -36,5 +36,5 @@ cargo install --path . --locked
 ## Usage
 
 ```bash
-pandoc -f markdown-auto_identifiers -t typst --filter pandoc-fenced-figure -o out.typ markdown.md
+pandoc -f markdown-auto_identifiers-implicit_figures -t typst --filter pandoc-fenced-figure -o out.typ markdown.md
 ```
